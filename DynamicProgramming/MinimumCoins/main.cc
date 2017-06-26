@@ -35,6 +35,7 @@ int main(){
         vi coins;
         rep(i,n) cin >> in, coins.pb(in);
         cin >> sum;
+
         vector< vi > dp(n, vi(sum+1,0));
         for(j=0;j<sum+1;j++) dp[0][j] = j;
         for(i=1; i<n; i++){
