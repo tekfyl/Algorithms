@@ -32,12 +32,12 @@ int main(){
     FastIO();
      string s1,s2;
         cin >> s1 >> s2;
+
         vector< vi > dp(s1.size()+1, vi(s2.size()+1,0));
-        rep1(i,s1.size()){
-            rep1(j,s2.size()){   
+        rep1(i,s1.size())
+            rep1(j,s2.size())  
      dp[i][j] = s1[i-1] == s2[j-1] ? dp[i-1][j-1] +1 : max(dp[i-1][j], dp[i][j-1]);
-            }
-        }
+            
         /*
         for(auto c:dp){
             for(auto d:c){
