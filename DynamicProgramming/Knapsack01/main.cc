@@ -37,14 +37,11 @@ int main(){
         int maxwt; cin >> maxwt;
         
         vector< vi > dp(n+1, vi(maxwt+1,0));
-        rep1(i,n){
-            rep1(j,maxwt){
-                if(j<wt[i]) dp[i][j] = dp[i-1][j];
-                else{
-                    dp[i][j] = max(dp[i-1][j], val[i]+dp[i-1][j-wt[i]]);
-                }
-            }
-        }
+        rep1(i,n)
+            rep1(j,maxwt)
+                t=dp[i-1][j],
+                dp[i][j] = j<wt[i]? t : max(dp[i-1][j], val[i]+dp[i-1][j-wt[i]]);
+
         cout << dp[n][maxwt];
     return 0;
 }
