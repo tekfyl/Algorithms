@@ -42,12 +42,7 @@ int main(){
                 dp[i][j] = j<v[i] ? dp[i-1][j] : (dp[i-1][j] || dp[i-1][j-v[i]]);
             }
         }
-        for(auto c:dp){
-            for(auto d:c){
-                cout << d << " ";
-            }
-            cout << endl;
-        }
+        
         cout << dp[n-1][sum];
     return 0;
 }
