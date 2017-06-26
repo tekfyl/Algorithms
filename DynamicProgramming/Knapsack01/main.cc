@@ -41,12 +41,7 @@ int main(){
             rep1(j,maxwt)
                 t=dp[i-1][j],
                 dp[i][j] = j<wt[i]? t : max(dp[i-1][j], val[i]+dp[i-1][j-wt[i]]);
-        for(auto c:dp){
-            for(auto d:c){
-                cout << d << " ";
-            }
-            cout << endl;
-        }
+        
         cout << dp[n][maxwt];
     return 0;
 }
