@@ -36,11 +36,17 @@ int main(){
 
         vector<vector <bool> > dp(n, vector<bool>(sum+1,0));
         rep(i,n) dp[i][0] = 1;
-        dp[v[0]][v[0]] = 1;
+        dp[0][v[0]] = 1;
         for(i=1; i<n; i++){
             for(j=1; j<sum+1; j++){
                 dp[i][j] = j<v[i] ? dp[i-1][j] : (dp[i-1][j] || dp[i-1][j-v[i]]);
             }
+        }
+        for(auto c:dp){
+            for(auto d:c){
+                cout << d << " ";
+            }
+            cout << endl;
         }
         cout << dp[n-1][sum];
     return 0;
