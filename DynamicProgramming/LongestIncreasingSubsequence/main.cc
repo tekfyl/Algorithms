@@ -35,16 +35,14 @@ int main(){
     FastIO();
         cin >> n;
         rep(i,n) cin >> in, v.pb(in);
-        vi ma(n,1);
-        rep1(j,n){
-            rep(i,n){
-                if(v[j]<v[i]){
-                    ma[i] = max(ma[i], ma[j]+1);
-                }
+        
+        vi dp(n,1);
+        for(i=1; i<n; i++){
+            for(j=0; j<i; j++){
+                if(v[i]>v[j]) dp[i] = max(dp[i], dp[j]+1); 
             }
         }
-        for(auto c:ma) cout << c << " ";
-        //cout << *mx(all(ma));
+        cout << *mx(all(dp));
     return 0;
 }
 
