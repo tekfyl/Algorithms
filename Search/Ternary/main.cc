@@ -46,6 +46,7 @@ int main(){
         cin >> n;
         rep(i,n) cin >> in, v.pb(in);
         int x; cin >> x;
+        sort(all(v));
         cout << ternary(0,n-1,x) << endl;
     return 0;
 }

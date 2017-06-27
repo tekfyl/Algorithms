@@ -33,6 +33,7 @@ int main(){
         cin >> n;
         rep(i,n) cin >> in, v.pb(in);
         int x; cin >> x;
+        sort(all(v));
         int l=0, r=n-1;
         while(!(l>r)){
                 int m1 = l+ (r-l)/3;
@@ -40,10 +41,10 @@ int main(){
                 if(x<v[m1]) r = m1-1;
                 else if(x<v[m2]) l = m1+1, r = m2-1;
                 else if(x>v[m2]) l = m2+1;
-                else if(x == v[m1]) {
+                if(x == v[m1]) {
                     cout << m1; return 0;
                 }
-                else{
+                if(x == v[m2]){
                     cout << m2; return 0;
                 }
         }
