@@ -34,7 +34,7 @@ int main(){
         rep(i,n) cin >> in, v.pb(in);
         sort(all(v));
         int x; cin >> x;
-        int l=0, r=n;
+        int l=0, r=n-1;
         while(!(l>r)){
             m = l+ (r-l)/2;
             if(x>v[m]){
