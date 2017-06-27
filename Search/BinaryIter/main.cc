@@ -37,12 +37,8 @@ int main(){
         int l=0, r=n-1;
         while(!(l>r)){
             m = l+ (r-l)/2;
-            if(x>v[m]){
-                l = m+1;
-            }
-            else if(x<v[m]){
-                r = m-1;
-            }
+            if(x<v[m]) r = m-1;
+            else if(x>v[m]) l = m+1;
             else{
                 cout << m; return 0;
             }
