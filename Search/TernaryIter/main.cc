@@ -47,6 +47,7 @@ int main(){
                     cout << m2; return 0;
                 }
         }
+        cout << -1;
     return 0;
 }
 
