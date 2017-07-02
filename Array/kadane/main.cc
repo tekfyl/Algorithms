@@ -19,7 +19,7 @@ using namespace std;
 
 ll inf=1e18+1;  
 int N=100; 
-vi v,q,st;
+vll v,q,st;
 int in=0,i=0,j=0,k=0,ans=0;
 int n=0,m=0,t=0,v1=0,v2=0;
 char c; string s;
@@ -31,11 +31,10 @@ int main(){
     ios_base::sync_with_stdio(0);
         cin >> n;
         rep(i,n) cin >> in, v.pb(in);
-        ll ans=0, max_ending_now=0;
-        rep(i,n){
-            max_ending_now += v[i];
-            if(max_ending_now < 0) max_ending_now = 0;
-            if(ans < max_ending_now) ans = max_ending_now;
+        ll ans = v[0], currmax = v[0];
+        rep1(i,n-1){
+            currmax = max(v[i], currmax+v[i]);
+            ans = max(ans, currmax);
         }
         cout << ans << endl;
     return 0;
