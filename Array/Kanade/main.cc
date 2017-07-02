@@ -31,13 +31,13 @@ int main(){
     ios_base::sync_with_stdio(0);
         cin >> n;
         rep(i,n) cin >> in, v.pb(in);
-        int max_so_far=0, max_ending_now=0;
+        ll ans=0, max_ending_now=0;
         rep(i,n){
             max_ending_now += v[i];
             if(max_ending_now < 0) max_ending_now = 0;
-            if(max_so_far < max_ending_now) max_so_far = max_ending_now;
+            if(ans < max_ending_now) ans = max_ending_now;
         }
-        cout << max_so_far << endl;
+        cout << ans << endl;
     return 0;
 }
 
