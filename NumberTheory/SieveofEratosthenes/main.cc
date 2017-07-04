@@ -31,14 +31,14 @@ void FastIO(){
 int main(){
     FastIO();
         cin >> n;
-        v.resize(n+1,0);
-        for(i=2; i<n; i++){
-            for(j=i*i; j<n; j+=i){
-                v[j] = 1;
+        v.resize(n+1,1);
+        for(i=2; i*i<n; i++){
+            for(j=2*i; j<n; j+=i){
+                v[j] = 0;
             }
         }
         for(i=2; i<n; i++){
-            if(v[i] == 0) cout << i << "\t";
+            if(v[i]) cout << i << "\t";
         }
     return 0;
 }
