@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 
+double tick(){static clock_t oldt,newt=clock();double diff=100.0*(newt-oldt)/CLOCKS_PER_SEC;oldt=newt;return diff;}
 #define all(c) c.begin(), c.end()
 #define ll long long
 #define pb push_back
@@ -39,6 +40,7 @@ int main(){
                 cout << d << " "; 
             }
         }
+        cout<<"\n"<<"Execution time : "<<tick()<<"\n";
     return 0;
 }
 
