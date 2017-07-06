@@ -63,10 +63,9 @@ int main(){
     cout << endl;
     vi ans;
     int s = n;
-    while(s != 1){
+    while(s != 0){
             ans.pb(s); s = v[s];
     }
-    ans.pb(1);
     reverse(all(ans));
     for(auto d: ans) cout << d << " ";
     //cout<<"\n"<<"Execution time : "<<tick()<<"\n";
