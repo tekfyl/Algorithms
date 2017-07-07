@@ -28,18 +28,18 @@ map<ii, int> w;
 vi q;
 
 void dijkstra(){
-    int s = 1;
+    int s = 1; // starting vertex
     dis[s] = 0;
     priority_queue<ii, vector<ii>, greater<ii> > q;
-    q.push(mk(0,1));
+    q.push(mk(dis[0],s));  // push distance and vertex
     while(!q.empty()){
-        ii top = q.top();
-        int d = top.fi, s = top.se;
+        s = q.top().se;
         q.pop(); vis[s] = 1;
         for(auto d:g[s]){
             if(!vis[d]){
-                if(dis[d] > dis[s] + w[mk(s,d)]){
-                    dis[d] = dis[s] + w[mk(s,d)];
+                int cost = dis[s] + w[mk(s,d)];
+                if(dis[d] > cost){
+                    dis[d] = cost;
                     v[d] = s;
                     q.push(mk(dis[d], d));
                 }
