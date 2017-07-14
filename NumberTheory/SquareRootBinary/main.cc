@@ -30,8 +30,11 @@ char c; string s;
 int main(){
     ios_base::sync_with_stdio(false);
     cin >> n;
+    if(n==0){
+        cout << 0 << endl; return 0;
+    }
     int l,r;
-    i = 0; r=n;
+    l = 1 ; r=n;
     while(l<=r){
         int mid = l+(r-l)/2;
         if(mid <= n/mid){
