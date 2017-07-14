@@ -29,7 +29,7 @@ void FastIO(){
 }
 
 int binary(int l, int r, int x){
-    if(r>=l){
+    if(l<=r){
         int m = l+ (r-l)/2;
         if(v[m] == x)  return m;
         return v[m]>x ?  binary(l, m-1, x) : binary(m+1, r, x);
