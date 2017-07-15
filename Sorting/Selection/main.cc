@@ -35,7 +35,7 @@ int main(){
     }
     rep(i,n){
         for(j=i+1; j<n; j++){
-            if(v[i]>v[j]) swap(v[i],v[j]);
+            if(v[i]>v[j]) swap(v[i], v[j]);
         }
     }
     for(auto c:v) cout << c << " ";
