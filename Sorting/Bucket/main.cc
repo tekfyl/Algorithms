@@ -22,7 +22,7 @@ vi v,q,st;
 int in=0,i=0,j=0,k=0,ans=0;
 int n=0,m=0,t=0,v1=0,v2=0;
 char c; string s;
-int N = 2e5+7, M = 2e5+1; 
+int N = 2000, M = 2e5+1; 
 vvi g(N); 
 vi vis(N,0), app(N,0), dep(N,0);
 
