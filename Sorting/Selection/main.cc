@@ -33,11 +33,10 @@ int main(){
     rep(i,n){
         cin >> in, v.pb(in);
     }
-    int min = 20000;
-    rep(i,n-1){
-        for(k=i+1; k<n; k++) if(v[k]<min) min = v[k], j = k; 
-        swap(v[i],v[j]);
-        min = 200000;
+    rep(i,n){
+        for(j=i+1; j<n; j++){
+            if(v[i]>v[j]) swap(v[i],v[j]);
+        }
     }
     for(auto c:v) cout << c << " ";
     //cout<<"\n"<<"Execution time : "<<tick()<<"\n";
