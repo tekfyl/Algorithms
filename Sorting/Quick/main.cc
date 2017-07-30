@@ -30,7 +30,7 @@ char c; string s;
 int part(int start, int end){
     int pivot = v[end];
     int pindex = start;
-    for(i=start; i<end; i++){
+    for(int i=start; i<end; i++){
         if(v[i]<pivot){
             swap(v[i], v[pindex]);
             pindex++;
