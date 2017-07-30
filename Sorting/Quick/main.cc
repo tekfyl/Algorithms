@@ -14,7 +14,7 @@
 #define se second
 #define mx max_element
 #define mn min_element
-#define swap(a,b) a=a^b,b=a^b,a=a^b
+//#define swap(a,b) a=a^b,b=a^b,a=a^b
 #define rep(i,n)    for(__typeof(n) i = 0; i < n; i++)
 #define rep1(i,n)   for(__typeof(n) i = 1; i <= n; i++)
 double tick(){static clock_t oldt,newt=clock();double diff=(newt-oldt)/CLOCKS_PER_SEC;oldt=newt;return diff;}
@@ -31,7 +31,7 @@ int part(int start, int end){
     int pivot = v[end];
     int pindex = start;
     for(int i=start; i<end; i++){
-        if(v[i]<=pivot){
+        if(v[i]<pivot){
             swap(v[i], v[pindex]);
             pindex++;
         }
