@@ -32,7 +32,7 @@ int main(){
     FastIO();
         cin >> n;
         v.resize(n+1,1);
-        for(i=2; i<n/i; i++) for(j=2*i; j<n; j+=i) v[j] = 0;
+        for(i=2; i<=n/i; i++) for(j=2*i; j<n; j+=i) v[j] = 0;
         
         for(i=2; i<n; i++){
             if(v[i]) cout << i << "\t";
