@@ -31,18 +31,18 @@ void FastIO(){
 int main(){
     FastIO();
         cin >> n;
-        vi wt(n+1,0),val(n+1,0);
-        rep1(i,n) cin >> wt[i];
-        rep1(i,n) cin >> val[i];
+        vi wt(n,0),val(n,0);
+        rep(i,n) cin >> wt[i];
+        rep(i,n) cin >> val[i];
         int maxwt; cin >> maxwt;
         
-        vector< vi > dp(n+1, vi(maxwt+1,0));
-        rep1(i,n)
+        vector< vi > dp(n, vi(maxwt+1,0));
+        rep1(i,n-1)
             rep1(j,maxwt)
                 t=dp[i-1][j],
                 dp[i][j] = j<wt[i]? t : max(dp[i-1][j], val[i]+dp[i-1][j-wt[i]]);
         
-        cout << dp[n][maxwt];
+        cout << dp[n-1][maxwt];
     return 0;
 }
 
